@@ -1,0 +1,37 @@
+<html>
+    <title>This is title of index:{{title}}</title>
+    <body>
+	<h1>Hello {{user.name}}</h1>
+	<li>age:{{user.age}}</li>
+	<li>sex:{{user.sex}}</li>
+	<div>{{user.name}} say : {{user.say}}</div>
+	<hr />
+
+	<li>{{book_list.0}}</li>
+        <li>{{book_list.1}}</li>
+        <li>{{book_list.2}}</li>
+        <li>{{book_list.3}}</li>
+
+	<hr />	
+	{% if user %}
+	    <li>name : {{user.name}}</li>
+	{% else %}
+	    user doesn't exist.
+	{% endif %}
+
+	<hr />
+	{% for book in book_list %}
+	<ul>{{book}}</ul>
+	{% endfor %}
+
+	<hr />
+	{% for k, v in user.items %}
+	<li>{{forloop.counter}}:{{k}}:{{v}}</li>
+	{% endfor %}
+
+	<hr />
+	{% for k in user %}
+	{{k}}
+	{% endfor %}
+    </body>
+</html>

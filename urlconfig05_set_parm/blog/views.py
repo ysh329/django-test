@@ -1,0 +1,21 @@
+from django.shortcuts import render, render_to_response
+
+# Create your views here.
+
+class Person(object):
+   def __init__(self, name, age, sex):
+	self.name = name
+	self.age = age
+	self.sex = sex
+	
+   def say(self):
+	return "I'm " + self.name
+
+
+
+def index(req, parm):
+    user = {'name':'yuens', 'age':23, 'sex':'male'}
+    #user = Person('zhm', 23, 'male')
+    book_list = ['python', 'java', 'php', 'web']
+
+    return render_to_response('index.html', {'title': 'index_title', 'book_list': book_list, 'user': user, 'id': parm})
